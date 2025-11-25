@@ -1,4 +1,5 @@
 def test_category_init(first_category, second_category):
+    """test category class"""
     assert first_category.name == "category_n"
     assert first_category.description == "category_dec"
     assert len(first_category.products) == 2
@@ -8,4 +9,3 @@ def test_category_init(first_category, second_category):
     assert second_category.category_count == 2
 
     assert first_category.all_products_count == 3
-

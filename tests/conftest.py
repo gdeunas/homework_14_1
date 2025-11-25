@@ -1,7 +1,7 @@
 import pytest
 
-from src.product import Product
 from src.category import Category
+from src.product import Product
 
 
 @pytest.fixture
@@ -12,8 +12,8 @@ def first_category():
         products=[
             Product("Iphone 15", "512GB, Gray space", 210000.0, 8),
             Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14),
-            ],
-        )
+        ],
+    )
 
 
 @pytest.fixture
@@ -23,8 +23,8 @@ def second_category():
         description="category_dec2",
         products=[
             Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7),
-            ],
-        )
+        ],
+    )
 
 
 @pytest.fixture
