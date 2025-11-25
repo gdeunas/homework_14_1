@@ -1,15 +1,22 @@
 import json
-import os
+from json import JSONDecodeError
 
 from src.category import Category
 from src.product import Product
 
 
-def read_json(path: str) -> dict:
+def read_json(path: str) -> list:
     """Function reads json data from filepath"""
-    full_path = os.path.abspath(path)
-    with open(full_path, "r", encoding="UTF-8") as file:
-        data = json.load(file)
+    data = []
+    try:
+        if path:
+            with open(path, encoding="utf-8") as f:
+                data = json.load(f)
+            return data
+    except FileNotFoundError:
+        print("File .env not found. Check the path.")
+    except JSONDecodeError:
+        print("JSONDecodeError JSON from requests.")
     return data
 
 
