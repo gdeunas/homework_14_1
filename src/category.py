@@ -1,0 +1,18 @@
+from src.product import Product
+
+
+class Category:
+    category_count = 0
+    product_count = 0
+    all_products_count = 0
+
+    def __init__(self, name: str, description: str, products: list[Product]):
+        """Для класса Category определите следующие свойства:
+        название (name),
+        описание (description),
+        список товаров категории (products)."""
+        self.name = name
+        self.description = description
+        self.products = products
+        Category.category_count += 1
+        Category.all_products_count += len(products) if products else 0
